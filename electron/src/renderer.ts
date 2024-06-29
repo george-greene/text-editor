@@ -28,4 +28,46 @@
 
 import './index.css';
 
-console.log('👋 This message is being logged by "renderer.ts", included via Vite');
+let editor = document.getElementById("editor");
+let text = "";
+
+window.addEventListener("keydown", (event) => {
+  switch (event.key) {
+    case "Alt":
+      break;
+    case "ArrowDown":
+      break;
+    case "ArrowLeft":
+      break;
+    case "ArrowRight":
+      break;
+    case "ArrowUp":
+      break;
+    case "Backspace":
+      text = text.substring(0, text.length - 1);
+      break;
+    case "CapsLock":
+      break;
+    case "Control":
+      break;
+    case "Enter":
+      text += "\n";
+      break;
+    case "Escape":
+      break;
+    case "Meta":
+      break;
+    case "Shift":
+      break;
+    case "Tab":
+      text += "\t";
+      break;
+    default:
+      text += event.key;
+      break;
+  }
+
+  if (editor.innerText !== text) {
+    editor.innerText = text;
+  }
+});
