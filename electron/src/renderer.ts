@@ -29,7 +29,12 @@
 import './index.css';
 
 let editor = document.getElementById("editor");
-let text = "";
+let paragraph = document.getElementById("paragraph");
+let text = "~ ";
+
+paragraph.innerText = text;
+
+let isControlPressed = false;
 
 window.addEventListener("keydown", (event) => {
   switch (event.key) {
@@ -49,11 +54,20 @@ window.addEventListener("keydown", (event) => {
     case "CapsLock":
       break;
     case "Control":
+      isControlPressed = true;
       break;
     case "Enter":
       text += "\n";
+      text += "~ ";
       break;
     case "Escape":
+      break;
+    case "l":
+      if (isControlPressed) {
+        text = "~ ";
+      } else {
+        text += event.key;
+      }
       break;
     case "Meta":
       break;
@@ -67,7 +81,15 @@ window.addEventListener("keydown", (event) => {
       break;
   }
 
-  if (editor.innerText !== text) {
-    editor.innerText = text;
+  if (paragraph.innerText !== text) {
+    paragraph.innerText = text;
+  }
+});
+
+window.addEventListener("keyup", (event) => {
+  switch (event.key) {
+    case "Control":
+      isControlPressed = false;
+      break;
   }
 });
