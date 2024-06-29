@@ -30,11 +30,14 @@ import './index.css';
 
 let editor = document.getElementById("editor");
 let paragraph = document.getElementById("paragraph");
-let text = "~ ";
+let statusLine = document.getElementById("status-line");
+// let text = "~ ";
+let text = "~ " + "\u2588";
 
 paragraph.innerText = text;
 
 let isControlPressed = false;
+let mode = "Normal";
 
 window.addEventListener("keydown", (event) => {
   switch (event.key) {
