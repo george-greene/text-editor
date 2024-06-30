@@ -1,41 +1,43 @@
-// https://colorhunt.co/palette/27374d526d829db2bfdde6ed
-// #27374D rgb(39, 55, 77)
-// #526D82 rgb(82, 109, 130)
-// #9DB2BF rgb(157, 178, 191)
-// #DDE6ED rgb(221, 230, 237)
+@font-face {
+  font-family: CommitMono;
+  src: url('../assets/fonts/CommitMonoNerdFontMono-Regular.otf');
+}
 
 @font-face {
-  font-family: CommitMono; 
-  src: url('../assets/fonts/CommitMonoNerdFontMono-Regular.otf'); 
-} 
+  font-family: NotoMono;
+  src: url('../assets/fonts/NotoMonoNerdFontMono-Regular.ttf');
+}
 
-@font-face {
-  font-family: NotoMono; 
-  src: url('../assets/fonts/NotoMonoNerdFontMono-Regular.ttf'); 
-} 
+:root {
+  --color-one: #0d1117;
+  --color-two: #27374D;
+  --color-three: #526D82;
+  --color-four: #9DB2BF;
+  --color-five: #DDE6ED;
+}
 
 html {
   height: 100vh;
 }
 
 body {
-  background-color: #27374D;
-  background-color: #0d1117;
-  color: #DDE6ED;
+  background-color: var(--color-one);
+  color: var(--color-five);
+  cursor: none;
   display: grid;
   font-family: NotoMono;
   font-size: 1rem;
-  gap: 1rem;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   height: 100%;
-  line-height: 1;
+  line-height: 1.5;
   margin: 0px;
 }
 
 #editor {
-  display: block;
-  height: calc(1rem * 24);
-  place-self: center;
-  width: calc(1rem * 48);
+  grid-column: 3 / 9;
+  grid-row: 1 / 8;
+  outline: solid 2px var(--color-three);
 }
 
 #paragraph {
@@ -44,17 +46,19 @@ body {
 }
 
 #status-line {
-  align-self: end;
-  align-items: center;
-  display: flex;
-  height: 2rem;
-  justify-self: center;
-  margin-bottom: 2rem;
-  width: 80%;
+  grid-column: 1 / 9;
+  grid-row: 8 / 9;
+  outline: solid 2px var(--color-three);
+}
+
+#tree {
+  grid-column: 1 / span 2;
+  grid-row: 1 / 8;
+  outline: solid 2px var(--color-three);
 }
 
 .outline {
-  outline: solid 2px #526D82;
+  outline: solid 2px var(--color-three);
   outline-offset: 1rem;
 }
 

@@ -26,13 +26,13 @@
  * ```
  */
 
+import { Unicode } from "./unicode.ts";
 import './index.css';
 
 let editor = document.getElementById("editor");
 let paragraph = document.getElementById("paragraph");
 let statusLine = document.getElementById("status-line");
-// let text = "~ ";
-let text = "~ " + "\u2588";
+let text = "~ " + Unicode.FullBlock;
 
 paragraph.innerText = text;
 
