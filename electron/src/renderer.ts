@@ -34,8 +34,6 @@ let paragraph = document.getElementById("paragraph");
 let statusLine = document.getElementById("status-line");
 let text = "~ " + Unicode.FullBlock;
 
-paragraph.innerText = text;
-
 let isControlPressed = false;
 let mode = "Normal";
 
@@ -84,8 +82,8 @@ window.addEventListener("keydown", (event) => {
       break;
   }
 
-  if (paragraph.innerText !== text) {
-    paragraph.innerText = text;
+  if (editor.innerText !== text) {
+    editor.innerText = text;
   }
 });
 
